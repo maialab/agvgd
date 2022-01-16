@@ -1,0 +1,45 @@
+Package: agvgd
+Type: Package
+Title: An R Implementation of the Align-GVGD (A-GVGD) Method
+Version: 0.1.0
+Authors@R: c(
+    person(given = "Ramiro", family = "Magno",
+      email = "ramiro.magno@gmail.com",
+      role = c("aut", "cre"),
+      comment = c(ORCID = "0000-0001-5226-3441")),
+    person(given = "Isabel", family = "Duarte",
+      email = "iduarte.scientist@gmail.com",
+      role = "aut",
+      comment = c(ORCID = "0000-0003-0060-2936")),
+    person(given = "Ana-Teresa", family = "Maia",
+      email = "maia.anateresa@gmail.com", role = "aut", 
+      comment = c(ORCID = "0000-0002-0454-9207")),
+    person("CINTESIS",
+    role = c("cph", "fnd"))
+    )
+Description: 'Align-GVGD' ('A-GVGD') is a method to predict the impact of
+    'missense' substitutions based on the properties of amino acid side
+    chains and protein multiple sequence alignments
+    <doi:10.1136/jmg.2005.033878>. 'A-GVGD' is an extension of the original
+    'Grantham' distance to multiple sequence alignments. This package
+    provides an alternative R implementation to the web version found on
+    <http://agvgd.hci.utah.edu/>.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.2
+Imports: 
+    crayon,
+    dplyr,
+    grantham,
+    magrittr,
+    rlang,
+    seqinr,
+    stringr,
+    tibble,
+    vctrs
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Depends: 
+    R (>= 2.10)

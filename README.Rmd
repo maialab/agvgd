@@ -1,0 +1,126 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# agvgd <img src='man/figures/logo.svg' align="right" height="139" />
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The R package `{agvgd}` provides an R implementation of the
+Align-GVGD<sup>[1](#1),[2](#2)</sup> (A-GVGD) method.
+
+A-GVGD combines multiple sequence alignment of orthologous sequences with the
+Grantham distance<sup>[3](#3)</sup> to classify missense variants, i.e. to
+distinguish human disease susceptibility missense changes from changes of little
+clinical significance.
+
+## Installation
+<!--
+Install `{agvgd}` from CRAN:
+
+``` r
+install.packages("agvgd")
+```
+-->
+You can install the development version of `{agvgd}` like so:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("maialab/agvgd")
+```
+
+## Usage
+
+Here is a minimal example using a dummy alignment constructed from an R matrix:
+
+```{r}
+library(agvgd)
+
+# The alignment can be provided as a simple matrix:
+alignment <- matrix(
+  c('P', 'M', 'I',
+    'P', 'I', 'I',
+    'P', 'L', 'I'),
+  nrow = 3,
+  byrow = TRUE
+)
+
+# In this example we will interrogate changes to the second position in the
+# alignment, i.e., changes to Methionine (M); therefore we set the position of
+# interest (poi) to 2.
+poi <- 2
+
+# Here's a set of three possible missense changes (substitutions): Isoleucine
+# (Ile, I), Leucine (Leu, L), and Tryptophan (Trp, W):
+substitutions <- c('I', 'L', 'W')
+
+# agvgd package's main function is `agvgd()` :)
+agvgd(alignment = alignment, poi = poi, substitutions)
+```
+
+This is another simple example but using one of the bundled alignments. This one
+is the alignment for the gene ATM. Let's say you are interested in position
+16 of the alignment, and that you would like to know the impact of all possible
+missense substitutions:
+
+```{r}
+# `read_alignment()` either reads in one of the bundled alignments with
+# `{agvgd}` by gene name or directly from a FASTA file.
+alignment <- read_alignment(gene = 'ATM')
+
+# For the sake of illustration, let us define a new alignment based on a narrow
+# region of the original alignment by focusing only on the first 30 positions.
+# Note: rows are protein sequences; columns are alignment positions.
+narrow_alignment <- alignment[, 1:30]
+
+# poi: position of interest
+poi <- 16
+
+# Print the alignment to the console and highlight the position of interest
+# (POI). NB: The POI is not highlighted in GitHub's README but it is on the R
+# console.
+print(narrow_alignment, poi = poi)
+
+# You may use `amino_acids()` to get a vector of all the 20 standard amino acids
+# and hence easily get a vector of all possible substitutions:
+all_substitutions <- amino_acids()
+
+agvgd(alignment = narrow_alignment, poi = poi, all_substitutions)
+```
+
+## Logo
+
+The `{agvgd}` logo, `agvgd.png`, is a derivative work of an illustration of ["Globin Evolution"](https://pdb101.rcsb.org/motm/206) by [David S. Goodsell](https://ccsb.scripps.edu/goodsell/) and the [RCSB PDB](https://www.rcsb.org/), used under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/). `agvgd.png` is licensed under CC-BY-4.0 by Ramiro Magno.
+
+## Related software
+
+- Align-GVGD (A-GVGD) by [Sean Tavtigian](https://uofuhealth.utah.edu/huntsman/labs/tavtigian/), provided as a web service and hosted by the [Huntsman Cancer Institute](https://healthcare.utah.edu/huntsmancancerinstitute/) at http://agvgd.hci.utah.edu/.
+- Multivariate Analysis of Protein Polymorphism (MAPP)<sup>[4](#4)</sup> by [Eric Stone](https://bdsi.anu.edu.au/people/professor-eric-stone) that had the same ideas as A-GVGD but in a more sophisticated framework. This used to be provided as a Java standalone application: https://biology.anu.edu.au/research/groups/stone-group-quantitative-and-computational-biology/software; however, the download link to MAPP has been down for a long while.
+- The [grantham](https://cran.r-project.org/package=grantham) package.
+
+## Acknowledgements
+
+The work on this package benefited greatly from the feedback of Professor Sean Tavtigian, and Dr. Russell Bell.
+
+## References
+
+<a id="1">1.</a> Tavtigian, S.V., Deffenbaugh, A. M., Yin, L., Judkins, T., Scholl, T., Samollow, P.B., de Silva, D., Zharkikh, A., Thomas, A. _Comprehensive statistical study of 452 BRCA1 missense substitutions with classification of eight recurrent substitutions as neutral_. Journal of Medical Genetics 43, 295--305 (2006). doi: [10.1136/jmg.2005.033878](https://doi.org/10.1136/jmg.2005.033878).
+
+<a id="2">2.</a> Mathe, E., Olivier, M., Kato, S., Ishioka, C., Hainaut, P., Tavtigian, S.V. _Computational approaches for predicting the biological effect of p53 missense mutations: a comparison of three sequence analysis based methods_. Nucleic Acids Research 34, 1317--1325 (2006). doi: [10.1093/nar/gkj518](https://doi.org/10.1093/nar/gkj518).
+
+<a id="3">3.</a> Grantham, R. _Amino acid difference formula to help explain protein evolution_. Science 185, 862--864
+(1974). doi: [10.1126/science.185.4154.862](https://doi.org/10.1126/science.185.4154.862).
+
+<a id="4">4.</a> Stone, E. A., Sidow, Arend. _Physicochemical constraint violation by missense substitutions mediates impairment of protein function and disease severity_. Genome Research 15, 978--986 (2005). doi: [10.1101/gr.3804205](https://doi.org/10.1101/gr.3804205).
