@@ -4,6 +4,9 @@
 # agvgd <img src='man/figures/logo.svg' align="right" height="139" />
 
 <!-- badges: start -->
+
+[![CRAN
+status](https://www.r-pkg.org/badges/version/agvgd)](https://CRAN.R-project.org/package=agvgd)
 <!-- badges: end -->
 
 The R package `{agvgd}` provides an R implementation of the
