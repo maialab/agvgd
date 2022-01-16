@@ -102,7 +102,7 @@ agvgd(alignment = narrow_alignment, poi = poi, all_substitutions)
 
 ## Logo
 
-The `{agvgd}` logo, `agvgd.png`, is a derivative work of an illustration of ["Globin Evolution"](https://pdb101.rcsb.org/motm/206) by [David S. Goodsell](https://ccsb.scripps.edu/goodsell/) and the [RCSB PDB](https://www.rcsb.org/), used under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/). `agvgd.png` is licensed under CC-BY-4.0 by Ramiro Magno.
+The `{agvgd}` logo, `agvgd.png`, is a derivative work of an illustration of ["Globin Evolution"](https://pdb101.rcsb.org/motm/206) by David S. Goodsell and the [RCSB PDB](https://www.rcsb.org/), used under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/). `agvgd.png` is licensed under CC-BY-4.0 by Ramiro Magno.
 
 ## Related software
 
