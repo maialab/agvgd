@@ -1,8 +1,6 @@
 url: https://maialab.org/agvgd
-
 template:
   bootstrap: 5
-
 authors:
   Ramiro Magno:
     href: https://rmagno.eu/
@@ -11,5 +9,6 @@ authors:
   Ana Teresa Maia:
     href: https://www.linkedin.com/in/ana-teresa-maia-2a1a866/
   CINTESIS:
-    href: "https://cintesis.eu/"
-    html: "<img src='reference/figures/cintesis.svg' height=24>"
+    href: https://cintesis.eu/
+    html: <img src='reference/figures/cintesis.svg' height=24>
+
