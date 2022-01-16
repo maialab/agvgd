@@ -8,6 +8,13 @@
 \description{
 'Align-GVGD' ('A-GVGD') is a method to predict the impact of 'missense' substitutions based on the properties of amino acid side chains and protein multiple sequence alignments <doi:10.1136/jmg.2005.033878>. 'A-GVGD' is an extension of the original 'Grantham' distance to multiple sequence alignments. This package provides an alternative R implementation to the web version found on <http://agvgd.hci.utah.edu/>.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://maialab.org/agvgd}
+}
+
+}
 \author{
 \strong{Maintainer}: Ramiro Magno \email{ramiro.magno@gmail.com} (\href{https://orcid.org/0000-0001-5226-3441}{ORCID})
 

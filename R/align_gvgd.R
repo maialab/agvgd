@@ -76,11 +76,17 @@ agvgd <-
 
   prediction <- gvgd_to_class(gv, gd)
 
-  tbl <- tibble::tibble(reference = as_three_letter(alignment_at_poi[1, 2]),
-                 substitution,
-                 gv,
-                 gd,
-                 prediction)
+  tbl <- tibble::tibble(
+    res = alignment_pos_to_residue_pos(
+      alignment = alignment,
+      alignment_pos = poi),
+    poi = poi,
+    ref = as_three_letter(alignment_at_poi[1, 2]),
+    sub = substitution,
+    gv,
+    gd,
+    prediction
+  )
 
   if(sort) {
     tbl <- dplyr::arrange(tbl, dplyr::desc(.data$gd))

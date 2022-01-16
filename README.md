@@ -7,22 +7,20 @@
 <!-- badges: end -->
 
 The R package `{agvgd}` provides an R implementation of the
-Align-GVGD<sup>[1](#1),[2](#2)</sup> (A-GVGD) method.
+Align-GVGD<sup>[1](#1),[2](#2),[3](#3)</sup> (A-GVGD) method.
 
 A-GVGD combines multiple sequence alignment of orthologous sequences
-with the Grantham distance<sup>[3](#3)</sup> to classify missense
+with the Grantham distance<sup>[4](#4)</sup> to classify missense
 variants, i.e. to distinguish human disease susceptibility missense
 changes from changes of little clinical significance.
 
 ## Installation
 
-<!--
 Install `{agvgd}` from CRAN:
 
 ``` r
 install.packages("agvgd")
 ```
--->
 
 You can install the development version of `{agvgd}` like so:
 
@@ -59,12 +57,12 @@ substitutions <- c('I', 'L', 'W')
 
 # agvgd package's main function is `agvgd()` :)
 agvgd(alignment = alignment, poi = poi, substitutions)
-#> # A tibble: 3 × 5
-#>   reference substitution    gv    gd prediction
-#>   <chr>     <chr>        <dbl> <dbl> <chr>     
-#> 1 Met       Ile           14.3   0   C0        
-#> 2 Met       Leu           14.3   0   C0        
-#> 3 Met       Trp           14.3  60.4 C35
+#> # A tibble: 3 × 7
+#>     res   poi ref   sub      gv    gd prediction
+#>   <int> <dbl> <chr> <chr> <dbl> <dbl> <chr>     
+#> 1     2     2 Met   Ile    14.3   0   C0        
+#> 2     2     2 Met   Leu    14.3   0   C0        
+#> 3     2     2 Met   Trp    14.3  60.4 C35
 ```
 
 This is another simple example but using one of the bundled alignments.
@@ -104,29 +102,29 @@ print(narrow_alignment, poi = poi)
 all_substitutions <- amino_acids()
 
 agvgd(alignment = narrow_alignment, poi = poi, all_substitutions)
-#> # A tibble: 20 × 5
-#>    reference substitution    gv    gd prediction
-#>    <chr>     <chr>        <dbl> <dbl> <chr>     
-#>  1 Leu       Ser           4.86 142.  C65       
-#>  2 Leu       Arg           4.86  97.6 C65       
-#>  3 Leu       Leu           4.86   0   C0        
-#>  4 Leu       Pro           4.86  95.4 C65       
-#>  5 Leu       Thr           4.86  89.3 C65       
-#>  6 Leu       Ala           4.86  93.7 C65       
-#>  7 Leu       Val           4.86  29.6 C15       
-#>  8 Leu       Gly           4.86 135.  C65       
-#>  9 Leu       Ile           4.86   0   C0        
-#> 10 Leu       Phe           4.86  21.3 C0        
-#> 11 Leu       Tyr           4.86  33.0 C25       
-#> 12 Leu       Cys           4.86 197.  C65       
-#> 13 Leu       His           4.86  94.3 C65       
-#> 14 Leu       Gln           4.86 109.  C65       
-#> 15 Leu       Asn           4.86 149.  C65       
-#> 16 Leu       Lys           4.86 102.  C65       
-#> 17 Leu       Asp           4.86 168.  C65       
-#> 18 Leu       Glu           4.86 134.  C65       
-#> 19 Leu       Met           4.86  10.1 C0        
-#> 20 Leu       Trp           4.86  60.5 C55
+#> # A tibble: 20 × 7
+#>      res   poi ref   sub      gv    gd prediction
+#>    <int> <dbl> <chr> <chr> <dbl> <dbl> <chr>     
+#>  1    15    16 Leu   Ser    4.86 142.  C65       
+#>  2    15    16 Leu   Arg    4.86  97.6 C65       
+#>  3    15    16 Leu   Leu    4.86   0   C0        
+#>  4    15    16 Leu   Pro    4.86  95.4 C65       
+#>  5    15    16 Leu   Thr    4.86  89.3 C65       
+#>  6    15    16 Leu   Ala    4.86  93.7 C65       
+#>  7    15    16 Leu   Val    4.86  29.6 C15       
+#>  8    15    16 Leu   Gly    4.86 135.  C65       
+#>  9    15    16 Leu   Ile    4.86   0   C0        
+#> 10    15    16 Leu   Phe    4.86  21.3 C0        
+#> 11    15    16 Leu   Tyr    4.86  33.0 C25       
+#> 12    15    16 Leu   Cys    4.86 197.  C65       
+#> 13    15    16 Leu   His    4.86  94.3 C65       
+#> 14    15    16 Leu   Gln    4.86 109.  C65       
+#> 15    15    16 Leu   Asn    4.86 149.  C65       
+#> 16    15    16 Leu   Lys    4.86 102.  C65       
+#> 17    15    16 Leu   Asp    4.86 168.  C65       
+#> 18    15    16 Leu   Glu    4.86 134.  C65       
+#> 19    15    16 Leu   Met    4.86  10.1 C0        
+#> 20    15    16 Leu   Trp    4.86  60.5 C55
 ```
 
 ## Logo
@@ -146,7 +144,7 @@ is licensed under CC-BY-4.0 by Ramiro Magno.
     Institute](https://healthcare.utah.edu/huntsmancancerinstitute/) at
     <http://agvgd.hci.utah.edu/>.
 -   Multivariate Analysis of Protein Polymorphism
-    (MAPP)<sup>[4](#4)</sup> by [Eric
+    (MAPP)<sup>[5](#5)</sup> by [Eric
     Stone](https://bdsi.anu.edu.au/people/professor-eric-stone) that had
     the same ideas as A-GVGD but in a more sophisticated framework. This
     used to be provided as a Java standalone application:
@@ -173,6 +171,12 @@ P., Tavtigian, S.V. *Computational approaches for predicting the
 biological effect of p53 missense mutations: a comparison of three
 sequence analysis based methods*. Nucleic Acids Research 34, 1317–1325
 (2006). doi: [10.1093/nar/gkj518](https://doi.org/10.1093/nar/gkj518).
+
+<a id="3">3.</a> Tavtigian, S.V., Byrnes, G. B, Goldgar, D. E., Thomas,
+A. *Classification of rare missense substitutions, using risk surfaces,
+with genetic- and molecular-epidemiology applications*. Human Mutation
+29, 1342–1354. doi:
+[10.1002/humu.20896](https://doi.org/10.1002/humu.20896)
 
 <a id="3">3.</a> Grantham, R. *Amino acid difference formula to help
 explain protein evolution*. Science 185, 862–864 (1974). doi:
