@@ -12,6 +12,7 @@
 Useful links:
 \itemize{
   \item \url{https://maialab.org/agvgd/}
+  \item \url{https://github.com/maialab/agvgd}
   \item Report bugs at \url{https://github.com/maialab/agvgd/issues}
 }
 
