@@ -7,6 +7,8 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/agvgd)](https://CRAN.R-project.org/package=agvgd)
+[![Codecov test
+coverage](https://codecov.io/gh/maialab/agvgd/branch/master/graph/badge.svg)](https://app.codecov.io/gh/maialab/agvgd?branch=master)
 <!-- badges: end -->
 
 The R package `{agvgd}` provides an R implementation of the
@@ -62,10 +64,10 @@ substitutions <- c('I', 'L', 'W')
 agvgd(alignment = alignment, poi = poi, substitutions)
 #> # A tibble: 3 × 7
 #>     res   poi ref   sub      gv    gd prediction
-#>   <int> <dbl> <chr> <chr> <dbl> <dbl> <chr>     
-#> 1     2     2 Met   Ile    14.3   0   C0        
-#> 2     2     2 Met   Leu    14.3   0   C0        
-#> 3     2     2 Met   Trp    14.3  60.4 C35
+#>   <int> <int> <chr> <chr> <dbl> <dbl> <chr>     
+#> 1     2     2 M     I      14.3   0   C0        
+#> 2     2     2 M     L      14.3   0   C0        
+#> 3     2     2 M     W      14.3  60.4 C35
 ```
 
 This is another simple example but using one of the bundled alignments.
@@ -107,27 +109,27 @@ all_substitutions <- amino_acids()
 agvgd(alignment = narrow_alignment, poi = poi, all_substitutions)
 #> # A tibble: 20 × 7
 #>      res   poi ref   sub      gv    gd prediction
-#>    <int> <dbl> <chr> <chr> <dbl> <dbl> <chr>     
-#>  1    15    16 Leu   Ser    4.86 142.  C65       
-#>  2    15    16 Leu   Arg    4.86  97.6 C65       
-#>  3    15    16 Leu   Leu    4.86   0   C0        
-#>  4    15    16 Leu   Pro    4.86  95.4 C65       
-#>  5    15    16 Leu   Thr    4.86  89.3 C65       
-#>  6    15    16 Leu   Ala    4.86  93.7 C65       
-#>  7    15    16 Leu   Val    4.86  29.6 C15       
-#>  8    15    16 Leu   Gly    4.86 135.  C65       
-#>  9    15    16 Leu   Ile    4.86   0   C0        
-#> 10    15    16 Leu   Phe    4.86  21.3 C0        
-#> 11    15    16 Leu   Tyr    4.86  33.0 C25       
-#> 12    15    16 Leu   Cys    4.86 197.  C65       
-#> 13    15    16 Leu   His    4.86  94.3 C65       
-#> 14    15    16 Leu   Gln    4.86 109.  C65       
-#> 15    15    16 Leu   Asn    4.86 149.  C65       
-#> 16    15    16 Leu   Lys    4.86 102.  C65       
-#> 17    15    16 Leu   Asp    4.86 168.  C65       
-#> 18    15    16 Leu   Glu    4.86 134.  C65       
-#> 19    15    16 Leu   Met    4.86  10.1 C0        
-#> 20    15    16 Leu   Trp    4.86  60.5 C55
+#>    <int> <int> <chr> <chr> <dbl> <dbl> <chr>     
+#>  1    15    16 L     S      4.86 142.  C65       
+#>  2    15    16 L     R      4.86  97.6 C65       
+#>  3    15    16 L     L      4.86   0   C0        
+#>  4    15    16 L     P      4.86  95.4 C65       
+#>  5    15    16 L     T      4.86  89.3 C65       
+#>  6    15    16 L     A      4.86  93.7 C65       
+#>  7    15    16 L     V      4.86  29.6 C15       
+#>  8    15    16 L     G      4.86 135.  C65       
+#>  9    15    16 L     I      4.86   0   C0        
+#> 10    15    16 L     F      4.86  21.3 C0        
+#> 11    15    16 L     Y      4.86  33.0 C25       
+#> 12    15    16 L     C      4.86 197.  C65       
+#> 13    15    16 L     H      4.86  94.3 C65       
+#> 14    15    16 L     Q      4.86 109.  C65       
+#> 15    15    16 L     N      4.86 149.  C65       
+#> 16    15    16 L     K      4.86 102.  C65       
+#> 17    15    16 L     D      4.86 168.  C65       
+#> 18    15    16 L     E      4.86 134.  C65       
+#> 19    15    16 L     M      4.86  10.1 C0        
+#> 20    15    16 L     W      4.86  60.5 C55
 ```
 
 ## Logo
