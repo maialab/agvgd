@@ -12,3 +12,24 @@ authors:
     href: https://cintesis.eu/
     html: <img src='https://maialab.org/agvgd/reference/figures/cintesis.svg' height=24>
 
+reference:
+- title: "Align-GVGD main function"
+  contents:
+  - agvgd
+- title: "Protein sequence alignment"
+  contents:
+  - alignment_file
+  - read_alignment
+  - res_to_poi
+  - poi_to_res
+- title: "Utility functions"
+  contents:
+  - amino_acids
+  - read_substitutions
+- title: "Align-GVGD low-level functions"
+  contents:
+  - cpv_ranges
+  - gv
+  - gd
+  - dev
+
