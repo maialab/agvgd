@@ -9,6 +9,12 @@
 #' @return An integer vector of alignment positions corresponding to residue position in the reference
 #'   sequence.
 #'
+#' @examples
+#' align_ATM <- read_alignment('ATM')
+#' align_ATM[, 1:5]
+#'
+#' # Convert the positions of the first five residues to alignment positions
+#' res_to_poi(align_ATM, 1:5)
 #'
 #' @export
 res_to_poi <- function(alignment, res) {
