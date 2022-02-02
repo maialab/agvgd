@@ -31,4 +31,9 @@ pre-bundled alignments, by gene name, or from a Multi-FASTA file.
 # Read in the alignment for the gene XRCC2
 read_alignment('XRCC2')
 
+# Also read in the alignment for the gene XRCC2, but now by specifying
+# directly the path to the file.
+path <- system.file("extdata", alignment_file("XRCC2"), package = "agvgd")
+read_alignment(file = path)
+
 }
