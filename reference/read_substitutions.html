@@ -14,7 +14,7 @@ Align-GVGD."><meta property="og:image" content="https://maialab.org/agvgd/logo.s
     
     <a class="navbar-brand me-2" href="../index.html">agvgd</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,6 +24,9 @@ Align-GVGD."><meta property="og:image" content="https://maialab.org/agvgd/logo.s
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
@@ -65,13 +68,68 @@ should be the same one as requested by the web version of
     <dl><dt>file</dt>
 <dd><p>The path to a file with amino acid substitutions.</p></dd>
 <dt>amino_acid_code</dt>
-<dd><p>The type of symbol used for amino acids in the returned output.</p></dd>
+<dd><p>The type of symbol used for amino acids in the
+returned output.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A tibble listing the amino acids substitutions.</p>
+    <p>A <a href="https://tibble.tidyverse.org/reference/tibble-package.html" class="external-link">tibble</a> listing the amino acids
+substitutions.</p>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># "sub.txt" is an example file containing missense substitutions formatted</span></span>
+<span class="r-in"><span class="co"># according # to the requirements indicated in http://agvgd.hci.utah.edu/help.php.</span></span>
+<span class="r-in"><span class="va">my_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"sub.txt"</span>, package <span class="op">=</span> <span class="st">"agvgd"</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="va">my_file</span><span class="op">)</span>, sep <span class="op">=</span> <span class="st">"\n"</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> P2S</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> P2R</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> P2L</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> P2T</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> P2A</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> P2V</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> P2G</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> P2I</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> P2F</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> P2Y</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> P2C</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> P2H</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> P2Q</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> P2N</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> P2K</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> P2D</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> P2E</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> P2M</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> P2W</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-in"></span>
+<span class="r-in"><span class="fu">read_substitutions</span><span class="op">(</span>file <span class="op">=</span> <span class="va">my_file</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 19 × 3</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      poi ref   sub  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     2 P     S    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>     2 P     R    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     2 P     L    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     2 P     T    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     2 P     A    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     2 P     V    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     2 P     G    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     2 P     I    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     2 P     F    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>     2 P     Y    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>     2 P     C    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>     2 P     H    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>     2 P     Q    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span>     2 P     N    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span>     2 P     K    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span>     2 P     D    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span>     2 P     E    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span>     2 P     M    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">19</span>     2 P     W    </span>
+<span class="r-in"></span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside></div>
 

@@ -45,7 +45,7 @@
     
     <a class="navbar-brand me-2" href="index.html">agvgd</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,6 +56,9 @@
       <ul class="navbar-nav me-auto">
 <li class="nav-item">
   <a class="nav-link" href="reference/index.html">Reference</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="news/index.html">Changelog</a>
 </li>
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
@@ -125,10 +128,10 @@
 <span class="fu"><a href="reference/agvgd.html">agvgd</a></span><span class="op">(</span>alignment <span class="op">=</span> <span class="va">alignment</span>, poi <span class="op">=</span> <span class="va">poi</span>, <span class="va">substitutions</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 3 × 7</span>
 <span class="co">#&gt;     res   poi ref   sub      gv    gd prediction</span>
-<span class="co">#&gt;   &lt;int&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     </span>
-<span class="co">#&gt; 1     2     2 Met   Ile    14.3   0   C0        </span>
-<span class="co">#&gt; 2     2     2 Met   Leu    14.3   0   C0        </span>
-<span class="co">#&gt; 3     2     2 Met   Trp    14.3  60.4 C35</span></code></pre></div>
+<span class="co">#&gt;   &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     </span>
+<span class="co">#&gt; 1     2     2 M     I      14.3   0   C0        </span>
+<span class="co">#&gt; 2     2     2 M     L      14.3   0   C0        </span>
+<span class="co">#&gt; 3     2     2 M     W      14.3  60.4 C35</span></code></pre></div>
 <p>This is another simple example but using one of the bundled alignments. This one is the alignment for the gene ATM. Let’s say you are interested in position 16 of the alignment, and that you would like to know the impact of all possible missense substitutions:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># `read_alignment()` either reads in one of the bundled alignments with</span>
@@ -164,27 +167,27 @@
 <span class="fu"><a href="reference/agvgd.html">agvgd</a></span><span class="op">(</span>alignment <span class="op">=</span> <span class="va">narrow_alignment</span>, poi <span class="op">=</span> <span class="va">poi</span>, <span class="va">all_substitutions</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 20 × 7</span>
 <span class="co">#&gt;      res   poi ref   sub      gv    gd prediction</span>
-<span class="co">#&gt;    &lt;int&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     </span>
-<span class="co">#&gt;  1    15    16 Leu   Ser    4.86 142.  C65       </span>
-<span class="co">#&gt;  2    15    16 Leu   Arg    4.86  97.6 C65       </span>
-<span class="co">#&gt;  3    15    16 Leu   Leu    4.86   0   C0        </span>
-<span class="co">#&gt;  4    15    16 Leu   Pro    4.86  95.4 C65       </span>
-<span class="co">#&gt;  5    15    16 Leu   Thr    4.86  89.3 C65       </span>
-<span class="co">#&gt;  6    15    16 Leu   Ala    4.86  93.7 C65       </span>
-<span class="co">#&gt;  7    15    16 Leu   Val    4.86  29.6 C15       </span>
-<span class="co">#&gt;  8    15    16 Leu   Gly    4.86 135.  C65       </span>
-<span class="co">#&gt;  9    15    16 Leu   Ile    4.86   0   C0        </span>
-<span class="co">#&gt; 10    15    16 Leu   Phe    4.86  21.3 C0        </span>
-<span class="co">#&gt; 11    15    16 Leu   Tyr    4.86  33.0 C25       </span>
-<span class="co">#&gt; 12    15    16 Leu   Cys    4.86 197.  C65       </span>
-<span class="co">#&gt; 13    15    16 Leu   His    4.86  94.3 C65       </span>
-<span class="co">#&gt; 14    15    16 Leu   Gln    4.86 109.  C65       </span>
-<span class="co">#&gt; 15    15    16 Leu   Asn    4.86 149.  C65       </span>
-<span class="co">#&gt; 16    15    16 Leu   Lys    4.86 102.  C65       </span>
-<span class="co">#&gt; 17    15    16 Leu   Asp    4.86 168.  C65       </span>
-<span class="co">#&gt; 18    15    16 Leu   Glu    4.86 134.  C65       </span>
-<span class="co">#&gt; 19    15    16 Leu   Met    4.86  10.1 C0        </span>
-<span class="co">#&gt; 20    15    16 Leu   Trp    4.86  60.5 C55</span></code></pre></div>
+<span class="co">#&gt;    &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     </span>
+<span class="co">#&gt;  1    15    16 L     S      4.86 142.  C65       </span>
+<span class="co">#&gt;  2    15    16 L     R      4.86  97.6 C65       </span>
+<span class="co">#&gt;  3    15    16 L     L      4.86   0   C0        </span>
+<span class="co">#&gt;  4    15    16 L     P      4.86  95.4 C65       </span>
+<span class="co">#&gt;  5    15    16 L     T      4.86  89.3 C65       </span>
+<span class="co">#&gt;  6    15    16 L     A      4.86  93.7 C65       </span>
+<span class="co">#&gt;  7    15    16 L     V      4.86  29.6 C15       </span>
+<span class="co">#&gt;  8    15    16 L     G      4.86 135.  C65       </span>
+<span class="co">#&gt;  9    15    16 L     I      4.86   0   C0        </span>
+<span class="co">#&gt; 10    15    16 L     F      4.86  21.3 C0        </span>
+<span class="co">#&gt; 11    15    16 L     Y      4.86  33.0 C25       </span>
+<span class="co">#&gt; 12    15    16 L     C      4.86 197.  C65       </span>
+<span class="co">#&gt; 13    15    16 L     H      4.86  94.3 C65       </span>
+<span class="co">#&gt; 14    15    16 L     Q      4.86 109.  C65       </span>
+<span class="co">#&gt; 15    15    16 L     N      4.86 149.  C65       </span>
+<span class="co">#&gt; 16    15    16 L     K      4.86 102.  C65       </span>
+<span class="co">#&gt; 17    15    16 L     D      4.86 168.  C65       </span>
+<span class="co">#&gt; 18    15    16 L     E      4.86 134.  C65       </span>
+<span class="co">#&gt; 19    15    16 L     M      4.86  10.1 C0        </span>
+<span class="co">#&gt; 20    15    16 L     W      4.86  60.5 C55</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="logo">Logo<a class="anchor" aria-label="anchor" href="#logo"></a>
@@ -257,6 +260,7 @@
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://CRAN.R-project.org/package=agvgd" class="external-link"><img src="https://www.r-pkg.org/badges/version/agvgd" alt="CRAN status"></a></li>
+<li><a href="https://app.codecov.io/gh/maialab/agvgd?branch=master" class="external-link"><img src="https://codecov.io/gh/maialab/agvgd/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 </ul>
 </div>
 
