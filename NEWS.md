@@ -8,4 +8,4 @@
 
 # agvgd 0.1.0
 
-* Firsts version of `{agvgd}`.
+* First version of `{agvgd}`.
