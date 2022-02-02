@@ -4,14 +4,14 @@
 #' the alignment.
 #'
 #' @param alignment An alignment.
-#' @param residue_pos A residue position.
+#' @param res A residue position.
 #'
 #' @return An integer vector of alignment positions corresponding to residue position in the reference
 #'   sequence.
 #'
 #'
 #' @export
-residue_pos_to_alignment_pos <- function(alignment, residue_pos) {
+res_to_poi <- function(alignment, res) {
 
   is_align_mat <- is_align_mat_class(alignment)
 
@@ -23,7 +23,7 @@ residue_pos_to_alignment_pos <- function(alignment, residue_pos) {
   # Alignment position referring to non-gaps, i.e. bona fide protein residues.
   alignment_pos <- which(ref_seq != '-')
 
-  # `residue_pos` refers to the ith residue in the protein sequence.
-  alignment_pos[residue_pos]
+  # `res` refers to the ith residue in the protein sequence.
+  alignment_pos[res]
 
 }
