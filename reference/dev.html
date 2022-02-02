@@ -63,7 +63,7 @@ as introduced by Tavtigian et al. (2006). Essentially, if <code>x</code> lies wi
 range [<code>min</code>, <code>max</code>], then <code>dev()</code> returns 0. If <code>x</code> is either below <code>min</code>, or
 above <code>max</code>, then <code>dev()</code> returns the absolute difference between <code>x</code> and
 <code>min</code> or <code>max</code>, respectively.</p>
-<p><img src="figures/dev-def.svg" alt=""></p>
+<p><img src="figures/dev-def.svg" alt="dev definition"></p>
 <p>Inputs are recycled in the sense of <code><a href="https://vctrs.r-lib.org/reference/vec_recycle.html" class="external-link">vctrs::vec_recycle()</a></code>.</p>
     </div>
 
@@ -89,7 +89,7 @@ above <code>max</code>, then <code>dev()</code> returns the absolute difference 
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Here's a plot showcasing <code>dev()</code> with <code>min = -4</code> and <code>max = 3</code>:</p><div class="sourceCode r"><pre><code><span class="va">x</span> <span class="op">&lt;-</span> <span class="op">-</span><span class="fl">10</span><span class="op">:</span><span class="fl">10</span>; <span class="va">min</span> <span class="op">&lt;-</span> <span class="op">-</span><span class="fl">4</span>; <span class="va">max</span> <span class="op">&lt;-</span> <span class="fl">3</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x</span>, y <span class="op">=</span> <span class="fu"><a href="../reference/dev.html">dev</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">min</span>, <span class="va">max</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">'l'</span>, xlab <span class="op">=</span> <span class="st">'x'</span>, ylab <span class="op">=</span> <span class="st">'deviation'</span><span class="op">)</span></code></pre><p></p></div>
-<p><img src="figures/dev-plot-1.svg" alt=""></p>
+<p><img src="figures/dev-plot-1.png" alt=""></p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
