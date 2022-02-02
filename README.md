@@ -70,10 +70,10 @@ agvgd(alignment = alignment, poi = poi, substitutions)
 #> 3     2     2 M     W      14.3  60.4 C35
 ```
 
-This is another simple example but using one of the bundled alignments.
-This one is the alignment for the gene ATM. Let’s say you are interested
-in position 16 of the alignment, and that you would like to know the
-impact of all possible missense substitutions:
+This is another simple example but using one of the bundled alignments
+with `{agvgd}`. This one is the alignment for the gene ATM. Let’s say
+you are interested in position 16 of the alignment, and that you would
+like to know the impact of all possible missense substitutions:
 
 ``` r
 # `read_alignment()` either reads in one of the bundled alignments with
