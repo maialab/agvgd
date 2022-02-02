@@ -12,13 +12,24 @@ read_substitutions(
 \arguments{
 \item{file}{The path to a file with amino acid substitutions.}
 
-\item{amino_acid_code}{The type of symbol used for amino acids in the returned output.}
+\item{amino_acid_code}{The type of symbol used for amino acids in the
+returned output.}
 }
 \value{
-A tibble listing the amino acids substitutions.
+A \link[tibble:tibble-package]{tibble} listing the amino acids
+substitutions.
 }
 \description{
 This function reads a file with amino acid substitutions. The format of
 should be the same one as requested by the web version of
 \href{http://agvgd.hci.utah.edu/help.php}{Align-GVGD}.
+}
+\examples{
+# "sub.txt" is an example file containing missense substitutions formatted
+# according # to the requirements indicated in http://agvgd.hci.utah.edu/help.php.
+my_file <- system.file("extdata", "sub.txt", package = "agvgd")
+cat(readLines(my_file), sep = "\n")
+
+read_substitutions(file = my_file)
+
 }
