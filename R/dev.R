@@ -7,14 +7,15 @@
 #' above `max`, then `dev()` returns the absolute difference between `x` and
 #' `min` or `max`, respectively.
 #'
-#' \figure{dev-def.svg}
+#' \if{html}{\figure{dev-def.svg}{dev definition}}
+#' \if{latex}{\figure{dev-def.png}{options: width=0.5in}}
 #'
 #' Inputs are recycled in the sense of [vctrs::vec_recycle()].
 #'
 #' @details
 #' Here's a plot showcasing `dev()` with `min = -4` and `max = 3`:
 #'
-#' ```{r dev-plot, fig.asp=2/(1+sqrt(5)), dev = 'svg'}
+#' ```{r dev-plot, fig.asp=2/(1+sqrt(5))}
 #' x <- -10:10; min <- -4; max <- 3
 #' plot(x, y = dev(x, min, max), type = 'l', xlab = 'x', ylab = 'deviation')
 #' ```

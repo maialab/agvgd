@@ -23,7 +23,8 @@ range [\code{min}, \code{max}], then \code{dev()} returns 0. If \code{x} is eith
 above \code{max}, then \code{dev()} returns the absolute difference between \code{x} and
 \code{min} or \code{max}, respectively.
 
-\figure{dev-def.svg}
+\if{html}{\figure{dev-def.svg}{dev definition}}
+\if{latex}{\figure{dev-def.png}{options: width=0.5in}}
 
 Inputs are recycled in the sense of \code{\link[vctrs:vec_recycle]{vctrs::vec_recycle()}}.
 }
@@ -32,7 +33,7 @@ Here's a plot showcasing \code{dev()} with \code{min = -4} and \code{max = 3}:\i
 plot(x, y = dev(x, min, max), type = 'l', xlab = 'x', ylab = 'deviation')
 }\if{html}{\out{</div>}}
 
-\figure{dev-plot-1.svg}
+\figure{dev-plot-1.png}
 }
 \examples{
 # `dev()` returns absolute differences from either min or max (whichever is
