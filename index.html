@@ -125,7 +125,7 @@
 <span class="va">substitutions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'I'</span>, <span class="st">'L'</span>, <span class="st">'W'</span><span class="op">)</span>
 
 <span class="co"># agvgd package's main function is `agvgd()` :)</span>
-<span class="fu"><a href="reference/agvgd.html">agvgd</a></span><span class="op">(</span>alignment <span class="op">=</span> <span class="va">alignment</span>, poi <span class="op">=</span> <span class="va">poi</span>, <span class="va">substitutions</span><span class="op">)</span>
+<span class="fu"><a href="reference/agvgd.html">agvgd</a></span><span class="op">(</span>alignment <span class="op">=</span> <span class="va">alignment</span>, poi <span class="op">=</span> <span class="va">poi</span>, sub <span class="op">=</span> <span class="va">substitutions</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 3 × 7</span>
 <span class="co">#&gt;     res   poi ref   sub      gv    gd prediction</span>
 <span class="co">#&gt;   &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     </span>
@@ -164,7 +164,7 @@
 <span class="co"># and hence easily get a vector of all possible substitutions:</span>
 <span class="va">all_substitutions</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/amino_acids.html">amino_acids</a></span><span class="op">(</span><span class="op">)</span>
 
-<span class="fu"><a href="reference/agvgd.html">agvgd</a></span><span class="op">(</span>alignment <span class="op">=</span> <span class="va">narrow_alignment</span>, poi <span class="op">=</span> <span class="va">poi</span>, <span class="va">all_substitutions</span><span class="op">)</span>
+<span class="fu"><a href="reference/agvgd.html">agvgd</a></span><span class="op">(</span>alignment <span class="op">=</span> <span class="va">narrow_alignment</span>, poi <span class="op">=</span> <span class="va">poi</span>, sub <span class="op">=</span> <span class="va">all_substitutions</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 20 × 7</span>
 <span class="co">#&gt;      res   poi ref   sub      gv    gd prediction</span>
 <span class="co">#&gt;    &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     </span>
