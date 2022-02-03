@@ -140,10 +140,13 @@ agvgd <- function(alignment,
     .f = ~ agvgd_(
       alignment = alignment,
       poi = .x,
-      sub = .y,
-      sort = sort
+      sub = .y
     )
   )
+
+  if(sort) {
+    agvgd_output <- dplyr::arrange(agvgd_output, dplyr::desc(.data$gd))
+  }
 
   return(agvgd_output)
 }
@@ -152,8 +155,7 @@ agvgd <- function(alignment,
 agvgd_ <-
   function(alignment,
            poi,
-           sub,
-           sort = FALSE) {
+           sub) {
 
   check_alignment(alignment)
   check_poi(poi)
@@ -200,10 +202,6 @@ agvgd_ <-
     gd,
     prediction
   )
-
-  if(sort) {
-    tbl <- dplyr::arrange(tbl, dplyr::desc(.data$gd))
-  }
 
   return(tbl)
 
