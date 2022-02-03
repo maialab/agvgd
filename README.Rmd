@@ -69,7 +69,7 @@ poi <- 2
 substitutions <- c('I', 'L', 'W')
 
 # agvgd package's main function is `agvgd()` :)
-agvgd(alignment = alignment, poi = poi, substitutions)
+agvgd(alignment = alignment, poi = poi, sub = substitutions)
 ```
 
 This is another simple example but using one of the bundled alignments with
@@ -99,7 +99,7 @@ print(narrow_alignment, poi = poi)
 # and hence easily get a vector of all possible substitutions:
 all_substitutions <- amino_acids()
 
-agvgd(alignment = narrow_alignment, poi = poi, all_substitutions)
+agvgd(alignment = narrow_alignment, poi = poi, sub = all_substitutions)
 ```
 
 ## Logo
