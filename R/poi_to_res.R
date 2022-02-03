@@ -19,12 +19,15 @@
 #'
 #' @export
 poi_to_res <- function(alignment, poi) {
-  is_align_mat <- is_align_mat_class(alignment)
 
-  if(!(is_align_mat || rlang::is_character(alignment)))
-    stop('`alignment` must be an alignment or the reference sequence supplied as a character vector.')
+  if(!rlang::is_character(alignment))
+    stop('`alignment` must be an alignment, i.e. a character matrix, or the reference sequence provided as a character vector.')
 
-  ref_seq <- `if`(is_align_mat_class(alignment), ref_sequence(alignment), alignment)
+  if(!(is.matrix(alignment) || is.vector(alignment)))
+    stop('`alignment` must be an alignment, i.e. a character matrix, or the reference sequence provided as a character vector.')
+
+  ref_seq <- if(is.matrix(alignment)) ref_sequence(alignment) else alignment
+  ref_seq <- if(is.vector(alignment)) alignment else ref_seq
 
   # `residue_pos` is expressed as residue numbers in the reference polypeptide
   # sequence (first sequence in the alignment).
