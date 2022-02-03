@@ -1,3 +1,37 @@
+test_that("agvgd errors", {
+
+  alignment <- read_alignment('ATM')
+  expect_error(agvgd(alignment = alignment, poi = letters[1:10]))
+  expect_error(agvgd(alignment = alignment, poi = 1:10, sub = 'Ser'))
+
+})
+
+test_that("agvgd `mode` parameter", {
+
+  alignment <- read_alignment('ATM')
+
+  r_vec <- agvgd(alignment = alignment, poi = 3:4, sub = c('A', 'V'))
+  expect_equal(r_vec$poi, 3:4)
+  expect_equal(r_vec$sub, c('A', 'V'))
+
+  r_expand_grid <- agvgd(alignment = alignment, poi = 3:4, sub = c('A', 'V'), mode = 'expand_grid')
+  expect_equal(r_expand_grid$poi, c(3, 3, 4, 4))
+  expect_equal(r_expand_grid$sub, c('A', 'V', 'A', 'V'))
+
+})
+
+test_that("agvgd `sort` parameter", {
+
+  alignment <- read_alignment('ATM')
+
+  r_vec <- agvgd(alignment = alignment, poi = 3:4, sub = c('A', 'V'), sort = TRUE)
+  expect_equal(r_vec$gd, sort(r_vec$gd, decreasing = TRUE))
+
+  r_expand_grid <- agvgd(alignment = alignment, poi = 3:4, sub = c('A', 'V'), mode = 'expand_grid', sort = TRUE)
+  expect_equal(r_expand_grid$gd, sort(r_expand_grid$gd, decreasing = TRUE))
+
+})
+
 test_that("align01", {
 
   example <- '01'
