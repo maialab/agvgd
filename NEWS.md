@@ -1,3 +1,8 @@
+# agvgd 0.1.2
+
+* Fixed a bug with `read_substitutions()` that would not parse positions correctly.
+* Added a new substitutions example file `lee2010_sub.txt`.
+
 # agvgd 0.1.1
 
 * The main function `agvgd()` had an alias, `align_agvgd()`, which is now removed to avoid confusion.

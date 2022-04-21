@@ -26,10 +26,14 @@ should be the same one as requested by the web version of
 }
 \examples{
 # "sub.txt" is an example file containing missense substitutions formatted
-# according # to the requirements indicated in http://agvgd.hci.utah.edu/help.php.
+# according to the requirements indicated in http://agvgd.hci.utah.edu/help.php.
 my_file <- system.file("extdata", "sub.txt", package = "agvgd")
 cat(readLines(my_file), sep = "\n")
 
 read_substitutions(file = my_file)
+
+# lee2010_sub.txt is a file containing the missense variants studied by
+# Lee et al. (2010): https://doi.org/10.1158/0008-5472.CAN-09-4563.
+read_substitutions(file = system.file("extdata", "lee2010_sub.txt", package = "agvgd"))
 
 }
