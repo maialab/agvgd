@@ -1,3 +1,18 @@
+#' @keywords internal
+parse_substitutions <- function(x) {
+
+  # Parse the substitutions
+  ref <- substr(x, 1, 1)
+  sub <- substr(x, nchar(x), nchar(x))
+  res <- as.integer(substr(x, 2, nchar(x) - 1))
+
+  # Assemble a data frame with the substitutions
+  tbl <- tibble::tibble(res = res, poi = NA_integer_, ref = ref, sub = sub)
+
+  return(tbl)
+}
+
+
 #' Read a file with amino acid substitutions
 #'
 #' This function reads a file with amino acid substitutions. The format of
@@ -36,13 +51,14 @@ read_substitutions <-
   # Remove empty lines
   lines <- lines[lines != '']
 
-  # Parse the substitutions
-  ref <- substr(lines, 1, 1)
-  sub <- substr(lines, nchar(lines), nchar(lines))
-  poi <- as.integer(substr(lines, 2, nchar(lines) - 1))
-
-  # Assemble a data frame with the substitutions
-  tbl <- tibble::tibble(poi = poi, ref = ref, sub = sub)
+  # # Parse the substitutions
+  # ref <- substr(lines, 1, 1)
+  # sub <- substr(lines, nchar(lines), nchar(lines))
+  # poi <- as.integer(substr(lines, 2, nchar(lines) - 1))
+  #
+  # # Assemble a data frame with the substitutions
+  # tbl <- tibble::tibble(poi = poi, ref = ref, sub = sub)
+  tbl <- parse_substitutions(lines)
 
   amino_acid_code <- match.arg(amino_acid_code)
 

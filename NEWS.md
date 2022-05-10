@@ -2,6 +2,7 @@
 
 * Fixed a bug with `read_substitutions()` that would not parse positions correctly.
 * Added a new substitutions example file `lee2010_sub.txt`.
+* Added a new function `read_agvgdweb_results()` aimed at developers.
 
 # agvgd 0.1.1
 

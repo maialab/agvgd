@@ -7,8 +7,9 @@ test_that("basic usage", {
   expected01 <-
     structure(
       list(
-        poi = c(2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L,
+        res = c(2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L,
                 2L, 2L, 2L),
+        poi = rep(NA_integer_, 19L),
         ref = c("P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P", "P",
                 "P", "P", "P", "P", "P", "P"),
         sub = c( "S", "R", "L", "T", "A", "V", "G", "I", "F", "Y", "C", "H",
@@ -20,8 +21,9 @@ test_that("basic usage", {
   expected02 <-
     structure(
       list(
-        poi = c(2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L,
+        res = c(2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L,
                 2L, 2L, 2L),
+        poi = rep(NA_integer_, 19L),
         ref = c("Pro", "Pro", "Pro", "Pro", "Pro", "Pro", "Pro", "Pro", "Pro",
                 "Pro", "Pro", "Pro", "Pro", "Pro", "Pro", "Pro", "Pro", "Pro",
                 "Pro"),
