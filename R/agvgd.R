@@ -30,6 +30,14 @@
 #'   'expand_grid'`, all combinations between elements of `poi` and `sub` are
 #'   combined.
 #' @param sort Whether to sort the output by `gd`, or not. Default is `FALSE`.
+#' @param keep_self Whether to keep those results in the output that correspond
+#'   to residues being the same in `ref` and `sub`. Default is `TRUE`. But it
+#'   will be useful to change it to `FALSE` if want to compare the results with
+#'   those provided by <http://agvgd.hci.utah.edu/> that filters them out.
+#' @param digits Integer indicating the number of decimal places to be used in
+#'   rounding `gv` and `gd` values. Default is `2`. Note that the calculation of
+#'   the `prediction` variable won't be affected by rounding of `gv` and `gd`,
+#'   as it is calculated prior to the rounding.
 #'
 #' @return A [tibble][tibble::tibble-package] whose observations refer to the
 #'   combination alignment position and amino acid substitution; consists of
@@ -110,7 +118,9 @@ agvgd <- function(alignment,
                   poi,
                   sub,
                   mode = c('recycle', 'expand_grid'),
-                  sort = FALSE) {
+                  sort = FALSE,
+                  keep_self = TRUE,
+                  digits = 2L) {
 
   mode <- match.arg(mode)
 
@@ -144,8 +154,18 @@ agvgd <- function(alignment,
     )
   )
 
+  # Rounding of `gv` and `gd`
+  agvgd_output <-
+    dplyr::mutate(agvgd_output,
+                  gv = round(.data$gv, digits = digits),
+                  gd = round(.data$gd, digits = digits))
+
   if(sort) {
     agvgd_output <- dplyr::arrange(agvgd_output, dplyr::desc(.data$gd))
+  }
+
+  if (!keep_self) {
+    agvgd_output <- dplyr::filter(agvgd_output, .data$ref != .data$sub)
   }
 
   return(agvgd_output)

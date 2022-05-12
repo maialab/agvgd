@@ -4,7 +4,15 @@
 \alias{agvgd}
 \title{Align-GVGD (A-GVGD)}
 \usage{
-agvgd(alignment, poi, sub, mode = c("recycle", "expand_grid"), sort = FALSE)
+agvgd(
+  alignment,
+  poi,
+  sub,
+  mode = c("recycle", "expand_grid"),
+  sort = FALSE,
+  keep_self = TRUE,
+  digits = 2L
+)
 }
 \arguments{
 \item{alignment}{A character matrix or an alignment object obtained with
@@ -24,6 +32,16 @@ shortest vector is recycled to match the length of the longest. If \code{mode = 
 combined.}
 
 \item{sort}{Whether to sort the output by \code{gd}, or not. Default is \code{FALSE}.}
+
+\item{keep_self}{Whether to keep those results in the output that correspond
+to residues being the same in \code{ref} and \code{sub}. Default is \code{TRUE}. But it
+will be useful to change it to \code{FALSE} if want to compare the results with
+those provided by \url{http://agvgd.hci.utah.edu/} that filters them out.}
+
+\item{digits}{Integer indicating the number of decimal places to be used in
+rounding \code{gv} and \code{gd} values. Default is \code{2}. Note that the calculation of
+the \code{prediction} variable won't be affected by rounding of \code{gv} and \code{gd},
+as it is calculated prior to the rounding.}
 }
 \value{
 A \link[tibble:tibble-package]{tibble} whose observations refer to the
