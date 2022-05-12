@@ -33,9 +33,11 @@ alignment <- matrix(
 
 # Export an alignment based on a matrix
 write_alignment(alignment, "my_alignment.fasta")
+cat(readLines("my_alignment.fasta"), sep = "\n")
 
 # Export one of the bundled alignments
 write_alignment(read_alignment(gene = 'BRCA1'), "BRCA1.fasta")
+cat(readLines("BRCA1.fasta")[1:10], sep = "\n")
 
 \dontshow{
 setwd(.old_wd)
