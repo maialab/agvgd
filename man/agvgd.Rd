@@ -93,7 +93,7 @@ agvgd(alignment = alignment_ATM, poi = 3:10, sub = 'S')
 # `poi` expects a position in the frame of reference of the alignment, i.e.
 # an alignment position (a column index). However, if you know instead
 # the residue position in the reference sequence (first sequence in the
-# alignment), then you may use the function `residue_pos_to_alignment_pos()`
+# alignment), then you may use the function `res_to_poi()`
 # to convert from residue position to alignment position.
 #
 # Example: The second residue in the reference sequence of the ATM alignment
