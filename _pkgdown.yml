@@ -26,6 +26,8 @@ reference:
   contents:
   - amino_acids
   - read_substitutions
+  - write_alignment
+  - write_substitutions
 - title: "Align-GVGD low-level functions"
   contents:
   - cpv_ranges
