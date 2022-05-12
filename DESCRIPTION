@@ -31,6 +31,7 @@ RoxygenNote: 7.1.2
 Imports: 
     crayon,
     dplyr,
+    glue,
     grantham,
     magrittr,
     purrr,
