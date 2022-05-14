@@ -4,6 +4,12 @@
 #' application <http://agvgd.hci.utah.edu/>.
 #'
 #' @param file A file path to the results output by the AGVGD Web app.
+#' @param alignment A character matrix or an alignment object obtained with
+#'   [read_alignment()]. Rows are expected to be sequences of single characters
+#'   (protein residues), and columns the alignment positions. The first row must
+#'   be the reference sequence, i.e. the sequence whose substitutions will be
+#'   evaluated against. This parameter can be left `NULL`. If supplied the
+#'   column `poi` in the output will be filled in (default is to be `NA`).
 #'
 #' @return  A [tibble][tibble::tibble-package] of seven columns:
 #' \describe{
@@ -28,15 +34,32 @@
 #' @importFrom rlang .data
 #' @keywords internal
 #' @export
-read_agvgdweb_results <- function(file = stop('`file` is missing')) {
+read_agvgdweb_results <- function(file = stop('`file` is missing'), alignment = NULL) {
 
   df <- utils::read.delim(file)
   tbl <- tibble::as_tibble(df)
 
-  tbl %>%
+  tbl <-
+    tbl %>%
     dplyr::mutate(parse_substitutions(.data$Substitution)) %>%
     dplyr::select(-'Substitution') %>%
-    dplyr::rename(gv = .data$GV, gd = .data$GD, prediction = .data$Prediction) %>%
-    dplyr::relocate(.data$res, .data$poi, .data$ref, .data$sub, .data$gv, .data$gd, .data$prediction) %>%
+    dplyr::rename(gv = .data$GV,
+                  gd = .data$GD,
+                  prediction = .data$Prediction) %>%
+    dplyr::relocate(.data$res,
+                    .data$poi,
+                    .data$ref,
+                    .data$sub,
+                    .data$gv,
+                    .data$gd,
+                    .data$prediction) %>%
     dplyr::mutate(prediction = stringr::str_remove(.data$prediction, '^Class '))
+
+  # If an alignment is supplied then it is possible to determine `poi` from the
+  # residude position `res`:
+  if(!is.null(alignment)) {
+    tbl$poi <- res_to_poi(alignment = alignment, res = tbl$res)
+  }
+
+  tbl
 }

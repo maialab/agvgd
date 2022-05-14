@@ -4,10 +4,17 @@
 \alias{read_agvgdweb_results}
 \title{Read in AGVGD Web Results}
 \usage{
-read_agvgdweb_results(file = stop("`file` is missing"))
+read_agvgdweb_results(file = stop("`file` is missing"), alignment = NULL)
 }
 \arguments{
 \item{file}{A file path to the results output by the AGVGD Web app.}
+
+\item{alignment}{A character matrix or an alignment object obtained with
+\code{\link[=read_alignment]{read_alignment()}}. Rows are expected to be sequences of single characters
+(protein residues), and columns the alignment positions. The first row must
+be the reference sequence, i.e. the sequence whose substitutions will be
+evaluated against. This parameter can be left \code{NULL}. If supplied the
+column \code{poi} in the output will be filled in (default is to be \code{NA}).}
 }
 \value{
 A \link[tibble:tibble-package]{tibble} of seven columns:
