@@ -10,6 +10,12 @@
     <loc>https://maialab.org/agvgd/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://maialab.org/agvgd/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>https://maialab.org/agvgd/articles/lee2010.html</loc>
+  </url>
+  <url>
     <loc>https://maialab.org/agvgd/authors.html</loc>
   </url>
   <url>
@@ -52,6 +58,9 @@
     <loc>https://maialab.org/agvgd/reference/poi_to_res.html</loc>
   </url>
   <url>
+    <loc>https://maialab.org/agvgd/reference/read_agvgdweb_results.html</loc>
+  </url>
+  <url>
     <loc>https://maialab.org/agvgd/reference/read_alignment.html</loc>
   </url>
   <url>
@@ -59,5 +68,14 @@
   </url>
   <url>
     <loc>https://maialab.org/agvgd/reference/res_to_poi.html</loc>
+  </url>
+  <url>
+    <loc>https://maialab.org/agvgd/reference/str_chop.html</loc>
+  </url>
+  <url>
+    <loc>https://maialab.org/agvgd/reference/write_alignment.html</loc>
+  </url>
+  <url>
+    <loc>https://maialab.org/agvgd/reference/write_substitutions.html</loc>
   </url>
 </urlset>
