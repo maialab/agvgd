@@ -3,3 +3,5 @@
 .RData
 .Ruserdata
 docs
+inst/*.bib.bak
+inst/*.bib.sav
