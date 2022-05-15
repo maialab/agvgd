@@ -1,7 +1,8 @@
 ---
 title: "Missense Variations in the BRCT Domain of BRCA1"
+output: rmarkdown::html_document
 resource_files:
-  - '../../man/figures/lee2010_fig03.png'
+  - '../man/figures/lee2010_fig03.png'
 bibliography: "`r system.file('references.bib', package = 'agvgd')`"
 csl: "`r system.file('nature.csl', package = 'agvgd')`"
 ---
@@ -39,7 +40,7 @@ labeled AG in [Figure
 paper.
 
 ```{r  out.width = "90%", echo=FALSE}
-knitr::include_graphics('../../man/figures/lee2010_fig03.png') 
+knitr::include_graphics('../man/figures/lee2010_fig03.png') 
 ```
 
 ## Reproducing the AGVGD scores
