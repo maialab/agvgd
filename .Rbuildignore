@@ -11,3 +11,4 @@
 ^CRAN-RELEASE$
 ^codecov\.yml$
 ^vignettes$
+^notes.md$
