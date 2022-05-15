@@ -30,7 +30,7 @@ Align-GVGD is one such method that uses protein multiple sequence alignment
 (PMSA) data to provide cancer risk estimates.
 
 In this vignette we show you how you can use `{agvgd}` to reproduce the results
-obtained by Lee *et al.* (2010) @Lee.CR.2010 on the study of missense variations in the BRCT
+obtained by Lee *et al.* (2010) [@Lee.CR.2010] on the study of missense variations in the BRCT
 Domain of BRCA1 gene.
 
 In Lee's paper, Align-GVGD prediction scores are part of their
@@ -51,7 +51,7 @@ To reproduce the AGVGD prediction scores, we need two data
 sets:
 
 - The protein sequence alignment of BRCA1 that included the BRCT Domain
-- The list of the 117 BRCA1 missense variants studied @Lee.CR.2010
+- The list of the 117 BRCA1 missense variants studied [@Lee.CR.2010]
 
 Both these data sets are already bundled with `{agvgd}`.
 
@@ -60,7 +60,7 @@ name of the gene `"BRCA1"`:
 
 ```{r}
 brca1_alignment <- read_alignment("BRCA1")
-print(brca1_alignment, width = 100)
+print(brca1_alignment, line_width = 200)
 ```
 
 To read in the 117 BRCA1 missense variants, i.e., the 117 substitutions, we

@@ -10,4 +10,4 @@
 ^cran-comments\.md$
 ^CRAN-RELEASE$
 ^codecov\.yml$
-^vignettes/articles$
+^vignettes$
