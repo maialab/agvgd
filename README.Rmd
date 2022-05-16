@@ -102,6 +102,17 @@ all_substitutions <- amino_acids()
 agvgd(alignment = narrow_alignment, poi = poi, sub = all_substitutions)
 ```
 
+## Disclaimer
+
+The data and information contained herein and in the results of the `{agvgd}`
+package are provided on an *as is* basis and the authors makes no
+representations or warranties, either expressed or implied, as to their
+accuracy, completeness or suitability for a particular purpose. Similarly,
+authors make no representations or warranties with regard to the
+non-infringement of third party proprietary rights. Thus, the authors do not
+accept any responsibility or liability with regard to the reliance on, and/or
+use of, such data and information.
+
 ## Logo
 
 The `{agvgd}` logo, `agvgd.png`, is a derivative work of an illustration of ["Globin Evolution"](https://pdb101.rcsb.org/motm/206) by David S. Goodsell and the [RCSB PDB](https://www.rcsb.org/), used under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/). `agvgd.png` is licensed under CC-BY-4.0 by Ramiro Magno.

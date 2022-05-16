@@ -132,6 +132,17 @@ agvgd(alignment = narrow_alignment, poi = poi, sub = all_substitutions)
 #> 20    15    16 L     W      4.86  60.5 C55
 ```
 
+## Disclaimer
+
+The data and information contained herein and in the results of the
+`{agvgd}` package are provided on an *as is* basis and the authors makes
+no representations or warranties, either expressed or implied, as to
+their accuracy, completeness or suitability for a particular purpose.
+Similarly, authors make no representations or warranties with regard to
+the non-infringement of third party proprietary rights. Thus, the
+authors do not accept any responsibility or liability with regard to the
+reliance on, and/or use of, such data and information.
+
 ## Logo
 
 The `{agvgd}` logo, `agvgd.png`, is a derivative work of an illustration
