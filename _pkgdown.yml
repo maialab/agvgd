@@ -28,6 +28,7 @@ reference:
   - read_substitutions
   - write_alignment
   - write_substitutions
+  - get_orthologue_sequences
 - title: "Align-GVGD low-level functions"
   contents:
   - cpv_ranges

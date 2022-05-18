@@ -33,12 +33,15 @@ Imports:
     dplyr,
     glue,
     grantham,
+    httr2,
     magrittr,
+    memoise,
     purrr,
     rlang,
     seqinr,
     stringr,
     tibble,
+    tidyjson,
     tidyr,
     vctrs
 Suggests: 
