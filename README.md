@@ -193,11 +193,11 @@ with genetic- and molecular-epidemiology applications*. Human Mutation
 29, 1342–1354. doi:
 [10.1002/humu.20896](https://doi.org/10.1002/humu.20896)
 
-<a id="3">3.</a> Grantham, R. *Amino acid difference formula to help
+<a id="4">4.</a> Grantham, R. *Amino acid difference formula to help
 explain protein evolution*. Science 185, 862–864 (1974). doi:
 [10.1126/science.185.4154.862](https://doi.org/10.1126/science.185.4154.862).
 
-<a id="4">4.</a> Stone, E. A., Sidow, Arend. *Physicochemical constraint
+<a id="5">5.</a> Stone, E. A., Sidow, Arend. *Physicochemical constraint
 violation by missense substitutions mediates impairment of protein
 function and disease severity*. Genome Research 15, 978–986 (2005). doi:
 [10.1101/gr.3804205](https://doi.org/10.1101/gr.3804205).
