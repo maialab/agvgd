@@ -27,21 +27,18 @@ Description: 'Align-GVGD' ('A-GVGD') is a method to predict the impact of
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
 Imports: 
     crayon,
     dplyr,
     glue,
     grantham,
-    httr2,
     magrittr,
-    memoise,
     purrr,
     rlang,
     seqinr,
     stringr,
     tibble,
-    tidyjson,
     tidyr,
     vctrs
 Suggests: 

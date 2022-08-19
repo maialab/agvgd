@@ -163,7 +163,7 @@ is licensed under CC-BY-4.0 by Ramiro Magno.
     Stone](https://bdsi.anu.edu.au/people/professor-eric-stone) that had
     the same ideas as A-GVGD but in a more sophisticated framework. This
     used to be provided as a Java standalone application:
-    <https://biology.anu.edu.au/research/groups/stone-group-quantitative-and-computational-biology/software>;
+    <https://biology.anu.edu.au/research/research-groups/stone-group-quantitative-and-computational-biology/software>;
     however, the download link to MAPP has been down for a long while.
 -   The [grantham](https://cran.r-project.org/package=grantham) package.
 

@@ -29,7 +29,9 @@ above \code{max}, then \code{dev()} returns the absolute difference between \cod
 Inputs are recycled in the sense of \code{\link[vctrs:vec_recycle]{vctrs::vec_recycle()}}.
 }
 \details{
-Here's a plot showcasing \code{dev()} with \code{min = -4} and \code{max = 3}:\if{html}{\out{<div class="sourceCode r">}}\preformatted{x <- -10:10; min <- -4; max <- 3
+Here's a plot showcasing \code{dev()} with \code{min = -4} and \code{max = 3}:
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{x <- -10:10; min <- -4; max <- 3
 plot(x, y = dev(x, min, max), type = 'l', xlab = 'x', ylab = 'deviation')
 }\if{html}{\out{</div>}}
 
