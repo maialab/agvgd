@@ -154,7 +154,7 @@ is licensed under CC-BY-4.0 by Ramiro Magno.
 ## Related software
 
 -   Align-GVGD (A-GVGD) by [Sean
-    Tavtigian](https://uofuhealth.utah.edu/huntsman/labs/tavtigian/),
+    Tavtigian](https://uofuhealth.utah.edu/huntsman/labs/tavtigian),
     provided as a web service and hosted by the [Huntsman Cancer
     Institute](https://healthcare.utah.edu/huntsmancancerinstitute/) at
     <http://agvgd.hci.utah.edu/>.
