@@ -8,7 +8,8 @@ profile_to_alignment(profile)
 }
 \arguments{
 \item{profile}{A sequence profile object as returned by
-\code{\link[protean:read_profile]{protean::read_profile()}} or \code{\link[protean:get_profile]{protean::get_profile()}}.}
+\code{protean::read_profile()} or \code{protean::get_profile()}. See the \code{{protean}}
+package at \url{https://github.com/maialab/protean}.}
 }
 \value{
 An alignment object, i.e. a character matrix whose elements are

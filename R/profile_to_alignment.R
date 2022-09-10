@@ -7,7 +7,8 @@
 #' positions.
 #'
 #' @param profile A sequence profile object as returned by
-#'   [protean::read_profile()] or [protean::get_profile()].
+#'   `protean::read_profile()` or `protean::get_profile()`. See the `{protean}`
+#'   package at <https://github.com/maialab/protean>.
 #'
 #' @return An alignment object, i.e. a character matrix whose elements are
 #'   protein residues in one-letter notation. Rows are sequences and columns are
