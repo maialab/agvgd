@@ -20,8 +20,8 @@
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link href="deps/bootstrap-5.1.3/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="An R Implementation of the Align-GVGD Method">
 <meta property="og:description" content="Align-GVGD (A-GVGD) is a method to predict the impact of
@@ -98,101 +98,101 @@
 </h2>
 <p>Install <a href="https://maialab.org/agvgd/">agvgd</a> from CRAN:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"agvgd"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"agvgd"</span><span class="op">)</span></span></code></pre></div>
 <p>You can install the development version of <a href="https://maialab.org/agvgd/">agvgd</a> like so:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"maialab/agvgd"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"maialab/agvgd"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
 <p>Here is a minimal example using a dummy alignment constructed from an R matrix:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://maialab.org/agvgd/">agvgd</a></span><span class="op">)</span>
-
-<span class="co"># The alignment can be provided as a simple matrix:</span>
-<span class="va">alignment</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'P'</span>, <span class="st">'M'</span>, <span class="st">'I'</span>,
-    <span class="st">'P'</span>, <span class="st">'I'</span>, <span class="st">'I'</span>,
-    <span class="st">'P'</span>, <span class="st">'L'</span>, <span class="st">'I'</span><span class="op">)</span>,
-  nrow <span class="op">=</span> <span class="fl">3</span>,
-  byrow <span class="op">=</span> <span class="cn">TRUE</span>
-<span class="op">)</span>
-
-<span class="co"># In this example we will interrogate changes to the second position in the</span>
-<span class="co"># alignment, i.e., changes to Methionine (M); therefore we set the position of</span>
-<span class="co"># interest (poi) to 2.</span>
-<span class="va">poi</span> <span class="op">&lt;-</span> <span class="fl">2</span>
-
-<span class="co"># Here's a set of three possible missense changes (substitutions): Isoleucine</span>
-<span class="co"># (Ile, I), Leucine (Leu, L), and Tryptophan (Trp, W):</span>
-<span class="va">substitutions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'I'</span>, <span class="st">'L'</span>, <span class="st">'W'</span><span class="op">)</span>
-
-<span class="co"># agvgd package's main function is `agvgd()` :)</span>
-<span class="fu"><a href="reference/agvgd.html">agvgd</a></span><span class="op">(</span>alignment <span class="op">=</span> <span class="va">alignment</span>, poi <span class="op">=</span> <span class="va">poi</span>, sub <span class="op">=</span> <span class="va">substitutions</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 3 × 7</span>
-<span class="co">#&gt;     res   poi ref   sub      gv    gd prediction</span>
-<span class="co">#&gt;   &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     </span>
-<span class="co">#&gt; 1     2     2 M     I      14.3   0   C0        </span>
-<span class="co">#&gt; 2     2     2 M     L      14.3   0   C0        </span>
-<span class="co">#&gt; 3     2     2 M     W      14.3  60.4 C35</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://maialab.org/agvgd/">agvgd</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># The alignment can be provided as a simple matrix:</span></span>
+<span><span class="va">alignment</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'P'</span>, <span class="st">'M'</span>, <span class="st">'I'</span>,</span>
+<span>    <span class="st">'P'</span>, <span class="st">'I'</span>, <span class="st">'I'</span>,</span>
+<span>    <span class="st">'P'</span>, <span class="st">'L'</span>, <span class="st">'I'</span><span class="op">)</span>,</span>
+<span>  nrow <span class="op">=</span> <span class="fl">3</span>,</span>
+<span>  byrow <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># In this example we will interrogate changes to the second position in the</span></span>
+<span><span class="co"># alignment, i.e., changes to Methionine (M); therefore we set the position of</span></span>
+<span><span class="co"># interest (poi) to 2.</span></span>
+<span><span class="va">poi</span> <span class="op">&lt;-</span> <span class="fl">2</span></span>
+<span></span>
+<span><span class="co"># Here's a set of three possible missense changes (substitutions): Isoleucine</span></span>
+<span><span class="co"># (Ile, I), Leucine (Leu, L), and Tryptophan (Trp, W):</span></span>
+<span><span class="va">substitutions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'I'</span>, <span class="st">'L'</span>, <span class="st">'W'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># agvgd package's main function is `agvgd()` :)</span></span>
+<span><span class="fu"><a href="reference/agvgd.html">agvgd</a></span><span class="op">(</span>alignment <span class="op">=</span> <span class="va">alignment</span>, poi <span class="op">=</span> <span class="va">poi</span>, sub <span class="op">=</span> <span class="va">substitutions</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 3 × 7</span></span>
+<span><span class="co">#&gt;     res   poi ref   sub      gv    gd prediction</span></span>
+<span><span class="co">#&gt;   &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     </span></span>
+<span><span class="co">#&gt; 1     2     2 M     I      14.3   0   C0        </span></span>
+<span><span class="co">#&gt; 2     2     2 M     L      14.3   0   C0        </span></span>
+<span><span class="co">#&gt; 3     2     2 M     W      14.3  60.4 C35</span></span></code></pre></div>
 <p>This is another simple example but using one of the bundled alignments with <a href="https://maialab.org/agvgd/">agvgd</a>. This one is the alignment for the gene ATM. Let’s say you are interested in position 16 of the alignment, and that you would like to know the impact of all possible missense substitutions:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># `read_alignment()` either reads in one of the bundled alignments with</span>
-<span class="co"># `{agvgd}` by gene name or directly from a FASTA file.</span>
-<span class="va">alignment</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_alignment.html">read_alignment</a></span><span class="op">(</span>gene <span class="op">=</span> <span class="st">'ATM'</span><span class="op">)</span>
-
-<span class="co"># For the sake of illustration, let us define a new alignment based on a narrow</span>
-<span class="co"># region of the original alignment by focusing only on the first 30 positions.</span>
-<span class="co"># Note: rows are protein sequences; columns are alignment positions.</span>
-<span class="va">narrow_alignment</span> <span class="op">&lt;-</span> <span class="va">alignment</span><span class="op">[</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">30</span><span class="op">]</span>
-
-<span class="co"># poi: position of interest</span>
-<span class="va">poi</span> <span class="op">&lt;-</span> <span class="fl">16</span>
-
-<span class="co"># Print the alignment to the console and highlight the position of interest</span>
-<span class="co"># (POI). NB: The POI is not highlighted in GitHub's README but it is on the R</span>
-<span class="co"># console.</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">narrow_alignment</span>, poi <span class="op">=</span> <span class="va">poi</span><span class="op">)</span>
-<span class="co">#&gt; Hsap_ATM_AAB65827.1  1 M-SLVLNDLLICCRQLEHDRATERKKEVEK</span>
-<span class="co">#&gt; Mmus_ATM_NP_031525.2 1 M-SLALNDLLICCRQLEHDRATERRKEVDK</span>
-<span class="co">#&gt; Sscr_ATM_AAT01608.1  1 M-SLALNDLLICCRQLEHDRATERRKAVEN</span>
-<span class="co">#&gt; Mdom_ATM_IARC        1 M-SLALNDLLLCCRQLENDRATERRKEVEK</span>
-<span class="co">#&gt; Ggal_ATM_edited      1 M-SLVLHDLLTCCRRLENERATERRNEIEN</span>
-<span class="co">#&gt; Xlae_ATM_AAT72929.1  1 M-SLALHELLLCCRQIETDKATERKKEIVK</span>
-<span class="co">#&gt; Drer_ATM_IARC_v2     1 M-SLALHELLVCCRGLENEKATERKKEVDR</span>
-<span class="co">#&gt; Bflo_ATM_IARC        1 MTDLLTHDLRDCCCHLESDKVTERKKNAEK</span>
-<span class="co">#&gt; Spur_ATM_ABY60856.1  1 MAEVLIP-LRTACGYLGSDKITERKKQIDI</span>
-
-<span class="co"># You may use `amino_acids()` to get a vector of all the 20 standard amino acids</span>
-<span class="co"># and hence easily get a vector of all possible substitutions:</span>
-<span class="va">all_substitutions</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/amino_acids.html">amino_acids</a></span><span class="op">(</span><span class="op">)</span>
-
-<span class="fu"><a href="reference/agvgd.html">agvgd</a></span><span class="op">(</span>alignment <span class="op">=</span> <span class="va">narrow_alignment</span>, poi <span class="op">=</span> <span class="va">poi</span>, sub <span class="op">=</span> <span class="va">all_substitutions</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 20 × 7</span>
-<span class="co">#&gt;      res   poi ref   sub      gv    gd prediction</span>
-<span class="co">#&gt;    &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     </span>
-<span class="co">#&gt;  1    15    16 L     S      4.86 142.  C65       </span>
-<span class="co">#&gt;  2    15    16 L     R      4.86  97.6 C65       </span>
-<span class="co">#&gt;  3    15    16 L     L      4.86   0   C0        </span>
-<span class="co">#&gt;  4    15    16 L     P      4.86  95.4 C65       </span>
-<span class="co">#&gt;  5    15    16 L     T      4.86  89.3 C65       </span>
-<span class="co">#&gt;  6    15    16 L     A      4.86  93.7 C65       </span>
-<span class="co">#&gt;  7    15    16 L     V      4.86  29.6 C15       </span>
-<span class="co">#&gt;  8    15    16 L     G      4.86 135.  C65       </span>
-<span class="co">#&gt;  9    15    16 L     I      4.86   0   C0        </span>
-<span class="co">#&gt; 10    15    16 L     F      4.86  21.3 C0        </span>
-<span class="co">#&gt; 11    15    16 L     Y      4.86  33.0 C25       </span>
-<span class="co">#&gt; 12    15    16 L     C      4.86 197.  C65       </span>
-<span class="co">#&gt; 13    15    16 L     H      4.86  94.3 C65       </span>
-<span class="co">#&gt; 14    15    16 L     Q      4.86 109.  C65       </span>
-<span class="co">#&gt; 15    15    16 L     N      4.86 149.  C65       </span>
-<span class="co">#&gt; 16    15    16 L     K      4.86 102.  C65       </span>
-<span class="co">#&gt; 17    15    16 L     D      4.86 168.  C65       </span>
-<span class="co">#&gt; 18    15    16 L     E      4.86 134.  C65       </span>
-<span class="co">#&gt; 19    15    16 L     M      4.86  10.1 C0        </span>
-<span class="co">#&gt; 20    15    16 L     W      4.86  60.5 C55</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># `read_alignment()` either reads in one of the bundled alignments with</span></span>
+<span><span class="co"># `{agvgd}` by gene name or directly from a FASTA file.</span></span>
+<span><span class="va">alignment</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_alignment.html">read_alignment</a></span><span class="op">(</span>gene <span class="op">=</span> <span class="st">'ATM'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># For the sake of illustration, let us define a new alignment based on a narrow</span></span>
+<span><span class="co"># region of the original alignment by focusing only on the first 30 positions.</span></span>
+<span><span class="co"># Note: rows are protein sequences; columns are alignment positions.</span></span>
+<span><span class="va">narrow_alignment</span> <span class="op">&lt;-</span> <span class="va">alignment</span><span class="op">[</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">30</span><span class="op">]</span></span>
+<span></span>
+<span><span class="co"># poi: position of interest</span></span>
+<span><span class="va">poi</span> <span class="op">&lt;-</span> <span class="fl">16</span></span>
+<span></span>
+<span><span class="co"># Print the alignment to the console and highlight the position of interest</span></span>
+<span><span class="co"># (POI). NB: The POI is not highlighted in GitHub's README but it is on the R</span></span>
+<span><span class="co"># console.</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">narrow_alignment</span>, poi <span class="op">=</span> <span class="va">poi</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Hsap_ATM_AAB65827.1  1 M-SLVLNDLLICCRQLEHDRATERKKEVEK</span></span>
+<span><span class="co">#&gt; Mmus_ATM_NP_031525.2 1 M-SLALNDLLICCRQLEHDRATERRKEVDK</span></span>
+<span><span class="co">#&gt; Sscr_ATM_AAT01608.1  1 M-SLALNDLLICCRQLEHDRATERRKAVEN</span></span>
+<span><span class="co">#&gt; Mdom_ATM_IARC        1 M-SLALNDLLLCCRQLENDRATERRKEVEK</span></span>
+<span><span class="co">#&gt; Ggal_ATM_edited      1 M-SLVLHDLLTCCRRLENERATERRNEIEN</span></span>
+<span><span class="co">#&gt; Xlae_ATM_AAT72929.1  1 M-SLALHELLLCCRQIETDKATERKKEIVK</span></span>
+<span><span class="co">#&gt; Drer_ATM_IARC_v2     1 M-SLALHELLVCCRGLENEKATERKKEVDR</span></span>
+<span><span class="co">#&gt; Bflo_ATM_IARC        1 MTDLLTHDLRDCCCHLESDKVTERKKNAEK</span></span>
+<span><span class="co">#&gt; Spur_ATM_ABY60856.1  1 MAEVLIP-LRTACGYLGSDKITERKKQIDI</span></span>
+<span></span>
+<span><span class="co"># You may use `amino_acids()` to get a vector of all the 20 standard amino acids</span></span>
+<span><span class="co"># and hence easily get a vector of all possible substitutions:</span></span>
+<span><span class="va">all_substitutions</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/amino_acids.html">amino_acids</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/agvgd.html">agvgd</a></span><span class="op">(</span>alignment <span class="op">=</span> <span class="va">narrow_alignment</span>, poi <span class="op">=</span> <span class="va">poi</span>, sub <span class="op">=</span> <span class="va">all_substitutions</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 20 × 7</span></span>
+<span><span class="co">#&gt;      res   poi ref   sub      gv    gd prediction</span></span>
+<span><span class="co">#&gt;    &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     </span></span>
+<span><span class="co">#&gt;  1    15    16 L     S      4.86 142.  C65       </span></span>
+<span><span class="co">#&gt;  2    15    16 L     R      4.86  97.6 C65       </span></span>
+<span><span class="co">#&gt;  3    15    16 L     L      4.86   0   C0        </span></span>
+<span><span class="co">#&gt;  4    15    16 L     P      4.86  95.4 C65       </span></span>
+<span><span class="co">#&gt;  5    15    16 L     T      4.86  89.3 C65       </span></span>
+<span><span class="co">#&gt;  6    15    16 L     A      4.86  93.7 C65       </span></span>
+<span><span class="co">#&gt;  7    15    16 L     V      4.86  29.6 C15       </span></span>
+<span><span class="co">#&gt;  8    15    16 L     G      4.86 135.  C65       </span></span>
+<span><span class="co">#&gt;  9    15    16 L     I      4.86   0   C0        </span></span>
+<span><span class="co">#&gt; 10    15    16 L     F      4.86  21.3 C0        </span></span>
+<span><span class="co">#&gt; 11    15    16 L     Y      4.86  33.0 C25       </span></span>
+<span><span class="co">#&gt; 12    15    16 L     C      4.86 197.  C65       </span></span>
+<span><span class="co">#&gt; 13    15    16 L     H      4.86  94.3 C65       </span></span>
+<span><span class="co">#&gt; 14    15    16 L     Q      4.86 109.  C65       </span></span>
+<span><span class="co">#&gt; 15    15    16 L     N      4.86 149.  C65       </span></span>
+<span><span class="co">#&gt; 16    15    16 L     K      4.86 102.  C65       </span></span>
+<span><span class="co">#&gt; 17    15    16 L     D      4.86 168.  C65       </span></span>
+<span><span class="co">#&gt; 18    15    16 L     E      4.86 134.  C65       </span></span>
+<span><span class="co">#&gt; 19    15    16 L     M      4.86  10.1 C0        </span></span>
+<span><span class="co">#&gt; 20    15    16 L     W      4.86  60.5 C55</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="disclaimer">Disclaimer<a class="anchor" aria-label="anchor" href="#disclaimer"></a>
@@ -208,8 +208,8 @@
 <h2 id="related-software">Related software<a class="anchor" aria-label="anchor" href="#related-software"></a>
 </h2>
 <ul>
-<li>Align-GVGD (A-GVGD) by <a href="https://uofuhealth.utah.edu/huntsman/labs/tavtigian/" class="external-link">Sean Tavtigian</a>, provided as a web service and hosted by the <a href="https://healthcare.utah.edu/huntsmancancerinstitute/" class="external-link">Huntsman Cancer Institute</a> at <a href="http://agvgd.hci.utah.edu/" class="external-link uri">http://agvgd.hci.utah.edu/</a>.</li>
-<li>Multivariate Analysis of Protein Polymorphism (MAPP)<sup><a href="#5">5</a></sup> by <a href="https://bdsi.anu.edu.au/people/professor-eric-stone" class="external-link">Eric Stone</a> that had the same ideas as A-GVGD but in a more sophisticated framework. This used to be provided as a Java standalone application: <a href="https://biology.anu.edu.au/research/groups/stone-group-quantitative-and-computational-biology/software" class="external-link uri">https://biology.anu.edu.au/research/groups/stone-group-quantitative-and-computational-biology/software</a>; however, the download link to MAPP has been down for a long while.</li>
+<li>Align-GVGD (A-GVGD) by <a href="https://uofuhealth.utah.edu/huntsman/labs/tavtigian" class="external-link">Sean Tavtigian</a>, provided as a web service and hosted by the <a href="https://healthcare.utah.edu/huntsmancancerinstitute/" class="external-link">Huntsman Cancer Institute</a> at <a href="http://agvgd.hci.utah.edu/" class="external-link uri">http://agvgd.hci.utah.edu/</a>.</li>
+<li>Multivariate Analysis of Protein Polymorphism (MAPP)<sup><a href="#5">5</a></sup> by <a href="https://bdsi.anu.edu.au/people/professor-eric-stone" class="external-link">Eric Stone</a> that had the same ideas as A-GVGD but in a more sophisticated framework. This used to be provided as a Java standalone application: <a href="https://biology.anu.edu.au/research/research-groups/stone-group-quantitative-and-computational-biology/software" class="external-link uri">https://biology.anu.edu.au/research/research-groups/stone-group-quantitative-and-computational-biology/software</a>; however, the download link to MAPP has been down for a long while.</li>
 <li>The <a href="https://cran.r-project.org/package=grantham" class="external-link">grantham</a> package.</li>
 </ul>
 </div>
@@ -285,7 +285,7 @@
 
 <div class="pkgdown-footer-right">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
     </footer>
