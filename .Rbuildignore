@@ -12,3 +12,4 @@
 ^codecov\.yml$
 ^vignettes$
 ^notes.md$
+^CRAN-SUBMISSION$
