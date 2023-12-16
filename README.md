@@ -9,6 +9,7 @@
 status](https://www.r-pkg.org/badges/version/agvgd)](https://CRAN.R-project.org/package=agvgd)
 [![Codecov test
 coverage](https://codecov.io/gh/maialab/agvgd/branch/master/graph/badge.svg)](https://app.codecov.io/gh/maialab/agvgd?branch=master)
+[![R-CMD-check](https://github.com/maialab/agvgd/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/maialab/agvgd/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The R package `{agvgd}` provides an R implementation of the
@@ -153,19 +154,18 @@ is licensed under CC-BY-4.0 by Ramiro Magno.
 
 ## Related software
 
--   Align-GVGD (A-GVGD) by [Sean
-    Tavtigian](https://uofuhealth.utah.edu/huntsman/labs/tavtigian),
-    provided as a web service and hosted by the [Huntsman Cancer
-    Institute](https://healthcare.utah.edu/huntsmancancerinstitute/) at
-    <http://agvgd.hci.utah.edu/>.
--   Multivariate Analysis of Protein Polymorphism
-    (MAPP)<sup>[5](#5)</sup> by [Eric
-    Stone](https://bdsi.anu.edu.au/people/professor-eric-stone) that had
-    the same ideas as A-GVGD but in a more sophisticated framework. This
-    used to be provided as a Java standalone application:
-    <https://biology.anu.edu.au/research/research-groups/stone-group-quantitative-and-computational-biology/software>;
-    however, the download link to MAPP has been down for a long while.
--   The [grantham](https://cran.r-project.org/package=grantham) package.
+- Align-GVGD (A-GVGD) by [Sean
+  Tavtigian](https://uofuhealth.utah.edu/huntsman/labs/tavtigian),
+  provided as a web service and hosted by the [Huntsman Cancer
+  Institute](https://healthcare.utah.edu/huntsmancancerinstitute/) at
+  <http://agvgd.hci.utah.edu/>.
+- Multivariate Analysis of Protein Polymorphism (MAPP)<sup>[5](#5)</sup>
+  by [Eric Stone](https://bdsi.anu.edu.au/people/professor-eric-stone)
+  that had the same ideas as A-GVGD but in a more sophisticated
+  framework. This used to be provided as a Java standalone application:
+  <https://biology.anu.edu.au/research/research-groups/stone-group-quantitative-and-computational-biology/software>;
+  however, the download link to MAPP has been down for a long while.
+- The [grantham](https://cran.r-project.org/package=grantham) package.
 
 ## Acknowledgements
 
