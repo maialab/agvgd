@@ -69,9 +69,8 @@ To retrieve the alignment of PIK3CA from the `{protean}` package, we will use th
 
 ```{r warning=FALSE, message=FALSE}
 # Load the required packages
-library(agvgd)
 library(protean)
-library(tidyverse)
+library(dplyr)
 
 # Using protean
 
@@ -166,8 +165,8 @@ A first round of curation can be done automatically by removing sequences so dis
 ```{r eval=TRUE}
 
 # Remove distant orthologs and redundant seqs
-pik3ca_profile %>%
-  filter(human_ortho_perc_id >= 90 & ortho_human_perc_id >= 90) -> profile2
+pik3ca_profile |>
+  dplyr::filter(human_ortho_perc_id >= 90 & ortho_human_perc_id >= 90) -> profile2
 
 # Format the profile to an alignment
 alignment2 <- agvgd::profile_to_alignment(profile2)
