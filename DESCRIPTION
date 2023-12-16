@@ -44,9 +44,13 @@ Imports:
 Suggests: 
     rmarkdown,
     covr,
-    testthat (>= 3.0.0),
+    testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Depends: 
     R (>= 2.10)
 URL: https://maialab.org/agvgd/, https://github.com/maialab/agvgd
 BugReports: https://github.com/maialab/agvgd/issues
+Enhances: 
+    protean (>= 0.1.1)
+Remotes:  
+    maialab/protean
