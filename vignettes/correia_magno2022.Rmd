@@ -167,17 +167,17 @@ A first round of curation can be done automatically by removing sequences so dis
 
 # Remove distant orthologs and redundant seqs
 pik3ca_profile %>%
-  filter(human_ortho_perc_id >= 90 & ortho_human_perc_id >= 90) -> vv_profile
+  filter(human_ortho_perc_id >= 90 & ortho_human_perc_id >= 90) -> profile2
 
 # Format the profile to an alignment
-vv_alignment <- agvgd::profile_to_alignment(vv_profile)
+alignment2 <- agvgd::profile_to_alignment(profile2)
 
 # Calculate the scores for the filtered alignment
-vv_scores <- agvgd::agvgd(alignment = vv_alignment,
+scores2 <- agvgd::agvgd(alignment = alignment2,
       poi = missense_variants$poi,
       sub = missense_variants$sub)
 
-print(vv_scores, n = Inf)
+print(scores2, n = Inf)
 
 ```
 
